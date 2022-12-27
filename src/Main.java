@@ -31,7 +31,7 @@ public class Main {
 
 
         Truck truck1 = new Truck("Скания", "Model 1", 4.6, driver5, Truck.TruckTypes.N2);
-        Truck truck2 = new Truck("Джип", "Гладиатор", 5.6, driver6);
+        Truck truck2 = new Truck("Джип", "Гладиатор", 5.6, driver6, Truck.TruckTypes.N1);
         Truck truck3 = new Truck("Тойота", "Такома", 4.0, driver7);
         Truck truck4 = new Truck("Шевроле", "Колорадо", 4.2, driver8);
 
