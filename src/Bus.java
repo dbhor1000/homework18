@@ -2,11 +2,11 @@ public class Bus extends Transport implements Transport.Competitor, Transport.Dr
 
 
     enum BusTypes {
-        Особо_малая("До 10 мест"),
-        Малая("До 25 мест"),
-        Средняя("40-50 мест"),
-        Большая("60-80 мест"),
-        Особо_большая("100-120 мест");
+        Osobo_malaya("До 10 мест"),
+        Malaya("До 25 мест"),
+        Srednyaya("40-50 мест"),
+        Bolshaya("60-80 мест"),
+        Osobo_bolshaya("100-120 мест");
 
 
         private String busType;
@@ -15,12 +15,17 @@ public class Bus extends Transport implements Transport.Competitor, Transport.Dr
             this.busType = busType;
         }
 
+        @Override
+        public String toString() {
+            return busType;
+        }
+
         public static void busTypesToString(){
 
             Bus.BusTypes[] bus = Bus.BusTypes.values();
             for(int i = 0; i < bus.length; i++){
 
-                System.out.println(bus[i]);
+                System.out.println(bus[i].toString());
             }
             System.out.println();
         }
@@ -100,22 +105,22 @@ public class Bus extends Transport implements Transport.Competitor, Transport.Dr
         } else {
 
             switch (type) {
-                case  Особо_малая:
+                case  Osobo_malaya:
                     System.out.println("Вместимость: до 10 мест.");
                     break;
-                case Малая:
+                case Malaya:
                     System.out.println("Вместимость: до 25 мест");
                     break;
 
-                case Средняя:
+                case Srednyaya:
                     System.out.println("Вместимость: от 40 до 50 мест.");
                     break;
 
-                case Большая:
+                case Bolshaya:
                     System.out.println("Вместимость: от 60 до 80 мест.");
                     break;
 
-                case Особо_большая:
+                case Osobo_bolshaya:
                     System.out.println("Вместимость: от 100 до 120 мест.");
                     break;
             }

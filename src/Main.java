@@ -25,9 +25,9 @@ public class Main {
         //Транспортные средства, участвующие в гонках
 
         Car car1 = new Car("Форд", "Фокус", 1.6, driver1);
-        Car car2 = new Car("Форд", "Мустанг", 2.6, driver2, Car.CarTypes.Универсал);
-        Car car3 = new Car("Ауди", "A8", 1.6, driver3, Car.CarTypes.Внедорожник);
-        Car car4 = new Car("Лада", "Калина", 3.4, driver4, Car.CarTypes.Кроссовер);
+        Car car2 = new Car("Форд", "Мустанг", 2.6, driver2, Car.CarTypes.Universal);
+        Car car3 = new Car("Ауди", "A8", 1.6, driver3, Car.CarTypes.Vnedorozhnik);
+        Car car4 = new Car("Лада", "Калина", 3.4, driver4, Car.CarTypes.Crossover);
 
 
         Truck truck1 = new Truck("Скания", "Model 1", 4.6, driver5, Truck.TruckTypes.N2);
@@ -36,7 +36,7 @@ public class Main {
         Truck truck4 = new Truck("Шевроле", "Колорадо", 4.2, driver8);
 
 
-        Bus bus1 = new Bus("Вольво", "B11R", 3.6, driver9, Bus.BusTypes.Средняя);
+        Bus bus1 = new Bus("Вольво", "B11R", 3.6, driver9, Bus.BusTypes.Srednyaya);
         Bus bus2 = new Bus("MAN", "Bus1", 3.7, driver10);
         Bus bus3 = new Bus("Marcopolo", "Multego", 3.6, driver11);
         Bus bus4 = new Bus("King Long", "XMQ6996Y", 4.0, driver12);
@@ -113,12 +113,15 @@ public class Main {
         Bus.BusTypes.busTypesToString();
         Truck.TruckTypes.truckTypesToString();
 
+
+
         //Вывод типов транспортных средств по интересующим критериям:
 
         car1.printType(); //Тип не указан
         bus1.printType();
         truck1.printType();
         car2.printType();
+
 
 
     }

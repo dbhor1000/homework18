@@ -4,15 +4,15 @@ import java.time.LocalDate;
 public class Car extends Transport implements Transport.Competitor, Transport.DriverAndCarInformation {
 
     enum CarTypes {         //Перечисления с типами для класса Car
-        Седан("Седан"),
-        Хетчбек("Хетчбек"),
-        Купе("Купе"),
-        Универсал("Универсал"),
-        Внедорожник("Внедорожник"),
-        Кроссовер("Кроссовер"),
-        Пикап("Пикап"),
-        Фургон("Фургон"),
-        Минивэн("Минивэн");
+        Sedan("Седан"),
+        Hatchback("Хетчбек"),
+        Coupe("Купе"),
+        Universal("Универсал"),
+        Vnedorozhnik("Внедорожник"),
+        Crossover("Кроссовер"),
+        Pickup("Пикап"),
+        Furgon("Фургон"),
+        Minivan("Минивэн");
 
         private String carType;
 
@@ -20,12 +20,17 @@ public class Car extends Transport implements Transport.Competitor, Transport.Dr
             this.carType = carType;
         }
 
+        @Override
+        public String toString() {
+            return carType;
+        }
+
         public static void carTypesToString(){
 
             Car.CarTypes[] cars = Car.CarTypes.values();
             for(int i = 0; i < cars.length; i++){
 
-                System.out.println(cars[i]);
+                System.out.println(cars[i].carType);
 
             }
 
@@ -36,8 +41,8 @@ public class Car extends Transport implements Transport.Competitor, Transport.Dr
 
 
 
-    DriverCategoryB driver;
-    CarTypes type;
+    private DriverCategoryB driver;
+    private CarTypes type;
 
     public <T extends DriverCategoryB> Car(String model, String subModel, double engineSize, T driver, CarTypes type) {     //Альтернативный конструктор с указанием типа автомобиля
 

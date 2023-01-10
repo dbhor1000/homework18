@@ -13,17 +13,23 @@ public class Truck extends Transport implements Transport.Competitor, Transport.
             this.truckType = truckType;
         }
 
+        @Override
+        public String toString() {
+            return truckType;
+        }
+
         public static void truckTypesToString() {
 
             Truck.TruckTypes[] trucks = Truck.TruckTypes.values();
             for (int i = 0; i < trucks.length; i++) {
 
-                System.out.println(trucks[i]);
+                System.out.println(trucks[i].toString());
             }
 
             System.out.println();
 
         }
+
     }
 
 
