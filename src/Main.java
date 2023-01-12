@@ -106,22 +106,12 @@ public class Main {
         bus4.maxSpeedOnLap();
         bus4.pitStop();
 
-
-        //Вывод всех имеющихся типов различных авто:
-
-        Car.CarTypes.carTypesToString();
-        Bus.BusTypes.busTypesToString();
-        Truck.TruckTypes.truckTypesToString();
-
-
-
         //Вывод типов транспортных средств по интересующим критериям:
 
         car1.printType(); //Тип не указан
         bus1.printType();
         truck1.printType();
         car2.printType();
-
 
 
     }

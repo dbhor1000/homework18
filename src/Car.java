@@ -25,17 +25,6 @@ public class Car extends Transport implements Transport.Competitor, Transport.Dr
             return carType;
         }
 
-        public static void carTypesToString(){
-
-            Car.CarTypes[] cars = Car.CarTypes.values();
-            for(int i = 0; i < cars.length; i++){
-
-                System.out.println(cars[i].carType);
-
-            }
-
-            System.out.println();
-        }
     }
 
 

@@ -1,35 +1,29 @@
 public class Truck extends Transport implements Transport.Competitor, Transport.DriverAndCarInformation {
 
-    enum TruckTypes {         //Перечисления с типами для класса Car
-        N1("С полной массой до 3,5 тонн"),
-        N2("с полной массой свыше 3,5 до 12 тонн"),
-        N3("с полной массой свыше 12 тонн");
+    enum TruckTypes {         //Перечисления с типами для класса Truck
+        N1(null, 3.5f),
+        N2(3.5f, 12f),
+        N3(12f, null);
 
+        private final Float min;
+        private final Float max;
 
-        private String truckType;
-
-        TruckTypes(String truckType) {
-
-            this.truckType = truckType;
+        TruckTypes(Float min, Float max) {
+            this.min = min;
+            this.max = max;
         }
 
         @Override
         public String toString() {
-            return truckType;
-        }
-
-        public static void truckTypesToString() {
-
-            Truck.TruckTypes[] trucks = Truck.TruckTypes.values();
-            for (int i = 0; i < trucks.length; i++) {
-
-                System.out.println(trucks[i].toString());
+            String result = "С полной массой";
+            if (min != null) {
+                result += " от " + min + "т.";
             }
-
-            System.out.println();
-
+            if (max != null) {
+                result += " до " + max + "т.";
+            }
+            return result;
         }
-
     }
 
 
@@ -91,31 +85,14 @@ public class Truck extends Transport implements Transport.Competitor, Transport.
 
     @Override
     public void printType() {
-
         System.out.println(model + " " + subModel + " :");
-
         if (type == null) {
             System.out.println("Данных по ТС не достаточно.");
         } else {
-
-            switch (type) {
-                case N1:
-                    System.out.println("Грузоподъемность: до 3,5 тонн.");
-                    break;
-                case N2:
-                    System.out.println("Грузоподъемность: от 3,5 до 12 тонн");
-                    break;
-
-                case N3:
-                    System.out.println("Грузоподъемность: свыше 12 тонн.");
-                    break;
-            }
-
-
+            System.out.println(type);
         }
 
         System.out.println();
-
     }
 
 }

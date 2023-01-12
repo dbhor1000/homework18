@@ -1,35 +1,27 @@
 public class Bus extends Transport implements Transport.Competitor, Transport.DriverAndCarInformation {
 
+    enum BusTypes {         //Перечисления с типами для класса Bus
+        Osobo_malaya(0, 10),
+        Malaya(10, 25),
+        Srednyaya(40, 50),
+        Bolshaya(60, 80),
+        Osobo_bolshaya(100, 120);
 
-    enum BusTypes {
-        Osobo_malaya("До 10 мест"),
-        Malaya("До 25 мест"),
-        Srednyaya("40-50 мест"),
-        Bolshaya("60-80 мест"),
-        Osobo_bolshaya("100-120 мест");
+        private final int min;
+        private final int max;
 
-
-        private String busType;
-
-        BusTypes(String busType) {
-            this.busType = busType;
+        BusTypes(int min, int max) {
+            this.min = min;
+            this.max = max;
         }
 
         @Override
         public String toString() {
-            return busType;
-        }
-
-        public static void busTypesToString(){
-
-            Bus.BusTypes[] bus = Bus.BusTypes.values();
-            for(int i = 0; i < bus.length; i++){
-
-                System.out.println(bus[i].toString());
-            }
-            System.out.println();
+            String result = "С посадкой от " + min + " до " + max + " пассажиров.";
+            return result;
         }
     }
+
 
 
     DriverCategoryD driver;
@@ -97,37 +89,16 @@ public class Bus extends Transport implements Transport.Competitor, Transport.Dr
 
     @Override
     public void printType() {
-
         System.out.println(model + " " + subModel + " :");
-
-        if(type == null){
+        if (type == null) {
             System.out.println("Данных по ТС не достаточно.");
         } else {
-
-            switch (type) {
-                case  Osobo_malaya:
-                    System.out.println("Вместимость: до 10 мест.");
-                    break;
-                case Malaya:
-                    System.out.println("Вместимость: до 25 мест");
-                    break;
-
-                case Srednyaya:
-                    System.out.println("Вместимость: от 40 до 50 мест.");
-                    break;
-
-                case Bolshaya:
-                    System.out.println("Вместимость: от 60 до 80 мест.");
-                    break;
-
-                case Osobo_bolshaya:
-                    System.out.println("Вместимость: от 100 до 120 мест.");
-                    break;
-            }
+            System.out.println(type);
         }
 
         System.out.println();
     }
+
 
 }
 
